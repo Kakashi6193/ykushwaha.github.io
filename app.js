@@ -4,7 +4,7 @@
  */
 (() => {
   "use strict";
-  const WHATSAPP_NUMBER = ""; // TODO: Add the seller's WhatsApp number, including country code.
+  const WHATSAPP_NUMBER = "917880958223"; // TODO: Add the seller's WhatsApp number, including country code.
   const products = window.YARN_NEST_PRODUCTS || [];
   const cart = new Map();
   const $ = (selector) => document.querySelector(selector);
