@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#465744">
+  <meta name="description" content="Thoughtful handmade crochet gifts, flowers, bags and accessories from The Yarn Nest.">
+  <title>The Yarn Nest — Handmade with Love</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="products.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="The Yarn Nest home">
+      <span class="brand-mark" aria-hidden="true">♡</span>
+      <span><span class="brand-name">The Yarn Nest</span><span class="brand-tagline">HANDMADE WITH LOVE</span></span>
+    </a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="#home">Home</a><a href="#shop">Shop</a><a href="#custom">Custom orders</a>
+    </nav>
+    <button class="cart-button" id="open-cart" type="button" aria-label="Open shopping cart">Bag <span id="cart-count" class="cart-count">0</span></button>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">CROCHET CREATIONS FOR A BRIGHTER DAY</p>
+        <h1>Handmade<br>with love.</h1>
+        <p class="hero-description">Thoughtful little treasures, made one stitch at a time. Discover charming gifts, floral bouquets and everyday accessories, each crafted with care.</p>
+        <a class="button button-primary" href="#shop">Explore the collection <span aria-hidden="true">→</span></a>
+        <p class="hero-note">Small-batch handmade · Custom creations welcome</p>
+      </div>
+      <div class="hero-art" role="img" aria-label="Illustration of a crochet bag, flowers and teddy bear">
+        <span class="hero-flower flower-one">🌷</span><span class="hero-bag">👜</span><span class="hero-bear">🧸</span><span class="hero-flower flower-two">🌼</span>
+        <span class="art-caption">HANDMADE · HEARTFELT · ONE OF A KIND</span>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="collections-title">
+      <div class="section-heading"><div><p class="eyebrow">FIND YOUR FAVOURITE</p><h2 id="collections-title">Shop our collections</h2></div><button class="text-button" data-filter="All" type="button">View all →</button></div>
+      <div class="category-grid">
+        <button class="category-card" data-filter="Flowers" type="button"><span>🌷</span><strong>Flowers</strong><small>Blooms that last</small></button>
+        <button class="category-card" data-filter="Bags" type="button"><span>👜</span><strong>Bags</strong><small>Everyday handmade</small></button>
+        <button class="category-card" data-filter="Toys" type="button"><span>🧸</span><strong>Toys</strong><small>Little companions</small></button>
+        <button class="category-card" data-filter="Accessories" type="button"><span>🌻</span><strong>Accessories</strong><small>Thoughtful details</small></button>
+      </div>
+    </section>
+
+    <section class="section" id="shop" aria-labelledby="shop-title">
+      <div class="section-heading"><div><p class="eyebrow">MADE SLOWLY, MADE WITH LOVE</p><h2 id="shop-title">Made for you</h2></div><label class="filter-label">Category <select id="category-filter"><option>All</option><option>Flowers</option><option>Bags</option><option>Toys</option><option>Accessories</option></select></label></div>
+      <div id="product-grid" class="product-grid" aria-live="polite"></div>
+      <p class="fine-print">Sample catalogue for preview. Confirm product availability, colours and final prices with the maker before ordering.</p>
+    </section>
+
+    <section class="custom-banner section" id="custom">
+      <div><p class="eyebrow">A LITTLE SOMETHING SPECIAL</p><h2>Dream it. We'll crochet it.</h2><p>Have a colour, character or gift in mind? Tell us your idea and we'll get back to you about what's possible.</p><button class="button button-primary" id="open-custom" type="button">Request a custom order →</button></div>
+      <div class="custom-art" aria-hidden="true">💐<span>Your idea,<br>our crochet magic.</span></div>
+    </section>
+
+    <section class="trust-row" aria-label="Our values">
+      <div><span>♡</span><strong>Made by hand</strong><small>Every stitch matters</small></div>
+      <div><span>✿</span><strong>Made to gift</strong><small>Personal touches welcome</small></div>
+      <div><span>⌁</span><strong>Pan-India delivery</strong><small>Shipping confirmed at order</small></div>
+      <div><span>✧</span><strong>Custom creations</strong><small>Made with your idea</small></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div><a class="footer-brand" href="#home">♡ The Yarn Nest</a><p>Handmade, one stitch at a time.</p></div>
+    <div class="footer-links"><a href="#shop">Shop</a><a href="#custom">Custom orders</a><button id="footer-contact" type="button">Contact on WhatsApp</button></div>
+    <p class="footer-note">A small independent crochet brand. Thank you for shopping handmade.</p>
+  </footer>
+
+  <div class="sticky-cart"><span><strong id="sticky-count">0 items</strong><small id="sticky-total">₹0</small></span><button class="button button-primary" id="sticky-open-cart" type="button">View bag →</button></div>
+
+  <dialog id="cart-dialog" class="modal">
+    <div class="modal-header"><div><p class="eyebrow">YOUR SELECTION</p><h2>Your shopping bag</h2></div><button class="icon-button" data-close="cart-dialog" aria-label="Close cart" type="button">×</button></div>
+    <div id="cart-items"></div>
+    <div id="cart-summary"></div>
+    <div class="modal-actions"><button class="button button-primary" id="checkout-button" type="button">Continue to checkout →</button><button class="button button-outline" id="whatsapp-cart" type="button">Enquire via WhatsApp</button></div>
+    <p class="fine-print">Shipping and final availability will be confirmed before your order is accepted.</p>
+  </dialog>
+
+  <dialog id="checkout-dialog" class="modal">
+    <div class="modal-header"><div><p class="eyebrow">ALMOST YOURS</p><h2>Order details</h2></div><button class="icon-button" data-close="checkout-dialog" aria-label="Close checkout" type="button">×</button></div>
+    <p class="muted">Fill in your details. Your order request will be prepared for WhatsApp; no payment is taken on this demo website.</p>
+    <form id="checkout-form">
+      <label>Full name *<input name="name" autocomplete="name" required></label>
+      <label>Phone number *<input name="phone" type="tel" autocomplete="tel" placeholder="+91..." required></label>
+      <label>Email (optional)<input name="email" type="email" autocomplete="email"></label>
+      <label>Delivery address *<textarea name="address" autocomplete="street-address" rows="2" required></textarea></label>
+      <div class="form-row"><label>City *<input name="city" autocomplete="address-level2" required></label><label>PIN code *<input name="pin" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" autocomplete="postal-code" required></label></div>
+      <label>Payment preference *<select name="payment" required><option value="">Choose a method</option><option>UPI (confirm with seller)</option><option>Payment link (to be provided)</option><option>Cash on delivery (subject to confirmation)</option></select></label>
+      <label>Order notes (optional)<textarea name="notes" rows="2" placeholder="Colour preference, gift note, etc."></textarea></label>
+      <div id="checkout-summary" class="notice"></div>
+      <button class="button button-primary full-width" type="submit">Prepare order for WhatsApp</button>
+    </form>
+  </dialog>
+
+  <dialog id="custom-dialog" class="modal">
+    <div class="modal-header"><div><p class="eyebrow">MADE JUST FOR YOU</p><h2>Custom order request</h2></div><button class="icon-button" data-close="custom-dialog" aria-label="Close form" type="button">×</button></div>
+    <p class="muted">Share your idea and the maker can confirm price, timing and availability.</p>
+    <form id="custom-form">
+      <label>Your name *<input name="name" required></label><label>Phone number *<input name="phone" type="tel" required></label>
+      <label>What would you like? *<select name="type" required><option value="">Choose a type</option><option>Flowers or bouquet</option><option>Bag or wearable</option><option>Plush toy or character</option><option>Accessories or home decor</option><option>Something else</option></select></label>
+      <label>Describe your idea *<textarea name="idea" rows="4" required placeholder="Colours, size, occasion and details…"></textarea></label>
+      <label>Approximate budget in ₹<input name="budget" type="number" min="0" placeholder="Optional"></label>
+      <button class="button button-primary full-width" type="submit">Prepare custom request</button>
+    </form>
+  </dialog>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
